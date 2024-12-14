@@ -76,7 +76,7 @@ function PostSingle({
                 </aside>
                 <hr className="my-10 border border-dashed lg:block" />
                 {/* Main content */}
-                <div>
+                <div className="flex-1">
                   {/* Article meta */}
                   {(author || date) && (
                     <>
@@ -84,7 +84,6 @@ function PostSingle({
                       <hr className="w-16 h-px pt-px bg-gray-200 border-0 my-6" />
                     </>
                   )}
-
                   {/* Article body */}
                   <PostBody content={content} />
                 </div>

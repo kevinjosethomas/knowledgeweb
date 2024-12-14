@@ -72,7 +72,7 @@ export function getFileStructure(dir: string = mdDir): any {
     const stat = fs.statSync(filePath);
 
     if (stat.isDirectory()) {
-      if (file === "attachments") {
+      if (file === "attachments" || file === "Images") {
         return;
       }
       const subDirStructure = getFileStructure(filePath);
