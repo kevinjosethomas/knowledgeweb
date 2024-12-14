@@ -3,7 +3,7 @@ module.exports = {
     return [
       {
         source: "/",
-        destination: "/readme",
+        destination: "/README",
         permanent: true,
       },
     ];
