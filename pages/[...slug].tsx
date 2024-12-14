@@ -87,7 +87,7 @@ type Params = {
 };
 
 export async function getStaticProps({ params }: Params) {
-  const slug = path.join(...params.slug);
+  const slug = params.slug.join("/").toLowerCase();
   const post = await getPostBySlug(slug, [
     "title",
     "excerpt",
@@ -130,11 +130,13 @@ export async function getStaticProps({ params }: Params) {
 export async function getStaticPaths() {
   const posts = await getAllPosts(["slug"]);
 
+  console.log(posts);
+
   return {
     paths: posts.map((post) => {
       return {
         params: {
-          slug: post.slug.split(path.sep),
+          slug: post.slug.toLowerCase().split(path.sep),
         },
       };
     }),
