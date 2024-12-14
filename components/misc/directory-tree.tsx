@@ -13,14 +13,11 @@ type DirectoryTreeProps = {
 };
 
 const DirectoryTree = ({ directory, activeSlug }: DirectoryTreeProps) => {
-  console.log("hello", directory);
   const [isOpen, setIsOpen] = useState(directory.name ? false : true);
 
   const toggleOpen = () => {
     setIsOpen(!isOpen);
   };
-
-  console.log(directory.files);
 
   return (
     <div className="directory">
